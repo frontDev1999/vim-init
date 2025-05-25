@@ -256,6 +256,10 @@ endif
 " 文件类型扩展
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'filetypes') >= 0
+        " TypeScript 基础支持
+        Plug 'leafgarland/typescript-vim' 
+        " TSX 语法高亮
+        Plug 'peitalin/vim-jsx-typescript'      
 
 	" powershell 脚本文件的语法高亮
 	Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
