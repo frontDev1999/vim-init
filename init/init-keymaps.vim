@@ -306,7 +306,19 @@ function! ExecuteFile()
 	endif
 endfunc
 
+" 禁用 Ctrl+S 的默认功能（需先在 shell 中设置 stty -ixon）
+set timeoutlen=500 ttimeoutlen=0
 
+" 普通模式、可视模式和插入模式下的 Ctrl+S 保存
+nnoremap <C-S> :w<CR>
+vnoremap <C-S> <C-C>:w<CR>
+inoremap <C-S> <Esc>:w<CR>a
+
+" 图形界面下的 Ctrl+S/Command+S 保存
+if has('gui_running')
+  map <D-s> :w<CR>  " Mac
+  map <C-s> :w<CR>  " Windows/Linux
+endif
 
 "----------------------------------------------------------------------
 " F2 在项目目录下 Grep 光标下单词，默认 C/C++/Py/Js ，扩展名自己扩充
