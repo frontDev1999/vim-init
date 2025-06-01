@@ -6,6 +6,16 @@
 " Last Modified: 2018/05/30 18:26:34
 "
 "======================================================================
+" 高亮当前行
+set cursorline
+
+set guioptions-=T
+" 隐藏工具栏
+set guioptions-=m
+" 隐藏菜单
+set guioptions+=e
+"设置字体
+set guifont=Fira\ Code\ 16
 
 " 防止重复加载
 if get(s:, 'loaded', 0) != 0
