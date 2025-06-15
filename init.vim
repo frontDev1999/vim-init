@@ -16,13 +16,19 @@ set guioptions-=m
 set guioptions+=e
 "设置字体
 set guifont=Fira\ Code\ 16
-
+" vim 记住的历史操作数量，默认是20
+set history=500
+" 当文件在外部被修改的时候，自动读取读取
+set autoread
+" 在所有模式下都允许使用鼠标，还可以是n,v,i,c等
+set mouse=a
 " 防止重复加载
 if get(s:, 'loaded', 0) != 0
 	finish
 else
 	let s:loaded = 1
 endif
+
 
 " 取得本文件所在的目录
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
